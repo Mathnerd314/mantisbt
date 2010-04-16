@@ -505,7 +505,8 @@ function access_has_bugnote_level( $p_access_level, $p_bugnote_id, $p_user_id = 
 	}
 
 	# If allow_reporter_close is enabled, then reporters can always close their own bugs
-	if( ON == config_get( 'allow_reporter_close' ) && bug_is_user_reporter( $p_bug_id, $p_user_id ) ) {
+	if( ON == config_get( 'allow_reporter_close' ) && bug_is_user_reporter( $p_bug_id, $p_user_id ) &&
+		access_has_bug_level( REPORTER, $p_bug_id, $p_user_id ) ) {
 		return true;
 	}
 
@@ -542,7 +543,8 @@ function access_has_bugnote_level( $p_access_level, $p_bugnote_id, $p_user_id = 
 	}
 
 	# If allow_reporter_reopen is enabled, then reporters can always reopen their own bugs
-	if( ON == config_get( 'allow_reporter_reopen' ) && bug_is_user_reporter( $p_bug_id, $p_user_id ) ) {
+	if( ON == config_get( 'allow_reporter_reopen' ) && bug_is_user_reporter( $p_bug_id, $p_user_id ) &&
+		access_has_bug_level( REPORTER, $p_bug_id, $p_user_id ) ) {
 		return true;
 	}
 

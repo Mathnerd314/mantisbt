@@ -56,6 +56,7 @@
 
 	if ( !( ( access_has_bug_level( access_get_status_threshold( $f_new_status, bug_get_field( $f_bug_id, 'project_id' ) ), $f_bug_id ) ) ||
 				( ( bug_get_field( $f_bug_id, 'reporter_id' ) == $t_current_user_id ) &&
+					( access_has_bug_level( REPORTER, $f_bug_id ) ) &&
 						( ( ON == config_get( 'allow_reporter_reopen' ) ) ||
 								( ON == config_get( 'allow_reporter_close' ) ) ) ) ||
 				( ( ON == $f_reopen_flag ) && ( access_has_bug_level( config_get( 'reopen_bug_threshold' ), $f_bug_id ) ) )
