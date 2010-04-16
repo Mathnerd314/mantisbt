@@ -788,7 +788,8 @@ function file_allow_bug_upload( $p_bug_id = null, $p_user_id = null ) {
 	# *** If we ever wanted to have a per-project setting enabling file
 	#     uploads, we'd want to check it here before exempting the reporter
 
-	if( $t_reporter && ( ON == config_get( 'allow_reporter_upload' ) ) ) {
+	if( $t_reporter && ( ON == config_get( 'allow_reporter_upload' ) ) &&
+		( null === $p_bug_id || access_has_bug_level( REPORTER, $p_bug_id, $p_user_id ) ) ) {
 		return true;
 	}
 

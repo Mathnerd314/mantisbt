@@ -357,6 +357,7 @@ if ( $tpl_show_status || $tpl_show_resolution ) {
 		echo '<td bgcolor="', get_status_color( $tpl_bug->status ), '">';
 		print_status_option_list( 'status', $tpl_bug->status,
 							( $tpl_bug->reporter_id == auth_get_current_user_id() &&
+								access_has_bug_level( REPORTER, $f_bug_id ) &&
 									( ON == config_get( 'allow_reporter_close' ) ) ), $tpl_bug->project_id );
 		echo '</td>';
 	} else {
