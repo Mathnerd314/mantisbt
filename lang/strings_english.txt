@@ -137,8 +137,10 @@ $s_select_option = '(select)'; # comboboxes default to this to instruct user to 
 
 # bug_actiongroup_page.php : mass treatment
 $s_bug_actiongroup_access = 'You did not have appropriate permissions to perform that action.';
-$s_bug_actiongroup_status = 'This issue cannot be changed to the requested status';
-$s_bug_actiongroup_category = 'This issue cannot be changed to the requested category';
+$s_bug_actiongroup_status = 'The requested status change is not allowed by the workflow.';
+$s_bug_actiongroup_handler = 'The requested handler is not allowed to handle this issue.';
+$s_bug_actiongroup_category = 'The requested category does not exist.';
+$s_bug_actiongroup_version = 'The requested version does not exist in this issue\'s project.';
 $s_close_bugs_conf_msg = 'Are you sure you wish to close these issues?';
 $s_delete_bugs_conf_msg = 'Are you sure you wish to delete these issues?';
 $s_move_bugs_conf_msg = 'Move issues to';
