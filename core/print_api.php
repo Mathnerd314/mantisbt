@@ -995,6 +995,7 @@ function print_all_bug_action_option_list() {
 		$t_user_id = auth_get_current_user_id();
 
 		if( access_has_project_level( config_get( 'update_bug_threshold' ), $t_project_id ) ) {
+			$commands['UP_PRODUCT_VERSION'] = lang_get( 'actiongroup_menu_update_product_version' );
 			$commands['UP_FIXED_IN_VERSION'] = lang_get( 'actiongroup_menu_update_fixed_in_version' );
 		}
 
